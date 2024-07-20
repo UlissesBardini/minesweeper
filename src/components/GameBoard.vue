@@ -121,11 +121,10 @@ function revealCell(cell: Cell | null, chord?: boolean) {
 }
 
 function repositionMine(cell: Cell) {
-  console.log(cell.isAMine);
   cell.isAMine = false;
   for (const row of cells.value) {
     for (const currCell of row) {
-      if (!currCell.isAMine) {
+      if (!currCell.isAMine && currCell !== cell) {
         currCell.isAMine = true;
         return;
       }

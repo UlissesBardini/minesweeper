@@ -21,6 +21,7 @@ function finishGame(win: boolean) {
 
 watch(model, () => {
   flags.value = model.value!.mines;
+  clearInterval(timer);
   time.value = 0;
   isGameRunning.value = false;
 });
